@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int main()
@@ -27,31 +28,34 @@ int main()
 	int count = i;
 
 
-    for ( int k = 0; k < count ; k++)
+    printf("姓名         學號   分數    加減分   百分比\n");
+	for ( int k = 0; k < count ; k++)
 	{
 		if ( (k + 1) % 5 == 0 )
 		{
-			printf("5:%.1f%%\n",arr[k]);
+			float f;
+			f = atof(arr[k]);
+			printf("%7.1f%%\n",f);
 		}
 
 		else if ((k + 1) % 5 == 1 )
 		{
-			printf("1:%s  ",arr[k]);		
+			printf("%-6s  ",arr[k]);		
 		}
 
 		else if ((k + 1) % 5 == 2 )
 		{
-			printf("2:%s  ",arr[k]);		
+			printf("%9s  ",arr[k]);		
 		}
 
 		else if ((k + 1) % 5 == 3 )
 		{
-			printf("3:%s  ",arr[k]);		
+			printf("%5s  ",arr[k]);		
 		}
 		
 		else if ((k + 1) % 5 == 4 )
 		{
-			printf("4:%s  ",arr[k]);		
+			printf("%7s  ",arr[k]);		
 		}
 	}
 
