@@ -2,8 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+1. input 一串文字(str)
+2. 將str用空格(" ")隔開 並存入陣列arr,arr[讀入順序][存放的字元]
+3. 將arr輸出時按照讀入順序分類,分別做不同的處理
+ex.第1,6,11...項靠左, 第5,10,15...項先做字元轉浮點數的處理,再換行
+ */
+
 int main()
-{
+{	
+	/*1.*/
 	char str[1000] ;
     char arr[100][100] ;
     gets(str);
@@ -11,6 +19,7 @@ int main()
 	int init_size = strlen(str);
 	char space[] = " ";
 
+	/*2.*/
 	char *info = strtok(str, space);
 
 	while(info != NULL)
@@ -24,12 +33,11 @@ int main()
 		info = strtok(NULL, space);
 		
 	}
-
-	int count = i;
-
-
+	
+	
+	/*3.*/
     printf("姓名         學號   分數    加減分   百分比\n");
-	for ( int k = 0; k < count ; k++)
+	for ( int k = 0; k < i ; k++)
 	{
 		if ( (k + 1) % 5 == 0 )
 		{
