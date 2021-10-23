@@ -15,15 +15,19 @@ int main()
 	{
 		char input[3];
 		printf("請輸入數字0-99(輸入g以結束遊戲):\n");
-		scanf("%c%c%c",&input[0], &input[1], &input[2]);
+		gets(input);
 		/*
-		BUG: 
-		如果宣告input[2],輸入12按ENTER,會將'\n'存入下一次的input[0]
-		ex. 先猜50,再猜25 會出現
-			input[0]='5' , input[1]='0'
-			input[0]='\n'(\n不會顯示) input[1]='2'
-			input[0]='5' , input[1]='\n'
-		宣告input[3]時, 若只輸入'g'或個位數字則需要按兩次ENTER才能完成輸入
+		如果使用scanf輸入
+		1.
+		ex. scanf("%c%c",&input[0], &input[1]);
+			會將'\n'存入下一次的input[0]
+			ex. 先猜50,再猜25 會出現
+				第一次猜: input[0]='5' , input[1]='0'
+				第二次猜: input[0]='\n', input[1]='2'
+				第三次猜: input[0]='5' , input[1]='\n' (\n不會顯示)
+		2.
+		ex. scanf("%c%c%c",&input[0], &input[1], &input[2]);
+			若只輸入'g'或個位數字則需要按兩次ENTER才能完成輸入
 		*/
 		if (input[0] == 'g')
 		{

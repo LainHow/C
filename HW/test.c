@@ -6,17 +6,10 @@
 int main()
 {
     char a[20];
-    int count = 1;
-    while (count<11)
-    {
-        scanf("%c%c%c",&a[2*count-2], &a[2*count-1], &a[2*count]);
-        count++;
-    }
+    gets(a);
     
-    for ( int i = 0; i < count; i = i+3)
-    {
-        printf("a[%d]=%c,a[%d]=%c ,a[%d]=%c\n",i ,a[i],i+1 ,a[i+1],i+2 , a[i+2]);
-    }
+    printf("a[0]=%c,a[1]=%c ,a[2]=%c\n",a[0],a[1],a[2]);
+
     
     
 
