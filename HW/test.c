@@ -5,16 +5,19 @@
 
 int main()
 {
-    char a[2];
-    scanf("%c",&a[0]);
-    scanf("%c",&a[1]);
+    char a[20];
+    int count = 1;
+    while (count<11)
+    {
+        scanf("%c%c%c",&a[2*count-2], &a[2*count-1], &a[2*count]);
+        count++;
+    }
     
+    for ( int i = 0; i < count; i = i+3)
+    {
+        printf("a[%d]=%c,a[%d]=%c ,a[%d]=%c\n",i ,a[i],i+1 ,a[i+1],i+2 , a[i+2]);
+    }
     
-
-    int i;
-    i=atoi(a);
-
-    printf("i=%d , a=%c  %c",i,a[0],a[1]);
     
 
     return 0;

@@ -11,52 +11,68 @@ int main()
 	int r=rand()%100;
 	int guess,count = 0;
 
-	do
-	{	
-		char order[2];
+	while (count<21)
+	{
+		char input[3];
 		printf("請輸入數字0-99(輸入g以結束遊戲):\n");
-		printf("R:%d\n",r);
-		scanf("%c",&order[0]);
-		scanf("%c",&order[1]);
-		if (count > 20 )
+		scanf("%c%c%c",&input[0], &input[1], &input[2]);
+		/*
+		BUG: 
+		如果宣告input[2],輸入12按ENTER,會將'\n'存入下一次的input[0]
+		ex. 先猜50,再猜25 會出現
+			input[0]='5' , input[1]='0'
+			input[0]='\n'(\n不會顯示) input[1]='2'
+			input[0]='5' , input[1]='\n'
+		宣告input[3]時, 若只輸入'g'或個位數字則需要按兩次ENTER才能完成輸入
+		*/
+		if (input[0] == 'g')
 		{
-			printf("You Lose!!");
+			printf("You Give Up!!共猜了%d次\n",count);
 			break;
 		}
 		else
-		{
-			if (order[0]=='g')
+		{	
+			count++;
+			guess = atoi(input);
+			/*
+			整數=atoi(字串),表示字串轉整數
+			*/
+			if (guess == r)
 			{
-				printf("You Give Up!!共猜了%d次",count);
+				printf("Bingo!!共猜了%d次\n",count);
 				break;
 			}
-			else
+			else if (guess > r)
 			{
-				guess = atoi(order);
-				if (guess == r)
+				if (count == 20)
 				{
-					count++;
-					printf("Bingo!!共猜了%d次",count);
+					printf("You Lose!!\n");
 					break;
 				}
-				else if ( guess < r)
+				else
 				{
-					count++;
-					printf("Guess:%d\n",guess);
-					printf("高一點\n");
-					printf("COUNT:%d\n",count);
-				}
-				else if ( guess > r)
-				{
-					count++;
-					printf("Guess:%d\n",guess);
 					printf("低一點\n");
-					printf("COUNT:%d\n",count);
 				}
-			
+				
 			}
+			else if (guess < r)
+			{
+				if (count == 20)
+				{
+					printf("You Lose!!\n");
+					break;
+				}
+				else
+				{
+					printf("高一點\n");
+				}
+				
+			}
+			
 		}
-	} while (count<=20);
+		
+	}
+	
 	
 	return 0;
 }
