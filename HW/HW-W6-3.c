@@ -80,13 +80,13 @@ int main()
     */
     for (int i = 0; i < line; i++)
     {
-        for (j = 1; j < line; j++)
+        for (j = i+1; j < line; j++)
         {
             if (M[i][i] == 0)
             {
                 break;
             }
-            c = M[i+1][i] / M[i][i];
+            c = M[j][i] / M[i][i];
             for ( k = 0; k < line*2; k++)
             {
                 M[j][k] = M[j][k] - M[i][k]*c;
@@ -96,11 +96,11 @@ int main()
     /*line99-110
     從最後一列依序往上減
     */
-    for ( i = line-1; i > 0; i--)
+    for ( i = line-1; i >= 0; i--)
     {
         for (int j = i-1; j >= 0; j--)
         {            
-            c=M[j][j+1] / M[i][i];
+            c=M[j][i] / M[i][i];
             for (int k = line * 2 - 1; k >= 0; k--)
             {
                 M[j][k] = M[j][k] - M[i][k]*c;
@@ -137,4 +137,3 @@ int main()
     }
     return 0;
 }
-
