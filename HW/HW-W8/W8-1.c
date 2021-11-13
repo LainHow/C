@@ -21,7 +21,7 @@ int main(){
     _Bool quit=0;
     struct stuinfo student[10];
     float num1 = 0,num2 = 0,num3 = -1.0;
-    int j = 0;
+    int j = 0, counter = 0;
     char text[10][10][20]={0};
     printf("輸入1:\n");
     while (1)
@@ -48,6 +48,7 @@ int main(){
         sscanf(input,"%s\t%s\t%s\t%s\t%s",student[j].name,student[j].ID,student[j].gender,student[j].Major,student[j].phonenum);
         j++;
     }
+    counter = j;
     int i = 0;
     printf("輸入2:\n");
     while (1)
@@ -84,7 +85,7 @@ int main(){
         }
         i++;
     }
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < counter; i++)
     {
 
         num1 = atof(text[i][3]);
@@ -110,7 +111,7 @@ int main(){
             }
         }
     int bool2 = 0;
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < counter; i++)
     {
         if (strcmp(student[i].name,target) == 0 || strcmp(student[i].ID,target) == 0)
         {

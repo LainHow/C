@@ -72,13 +72,12 @@ int main(){
     {
         for (j = 0; j < max_words; j++)
         {
-            if (strspn(text[i][j],target) == len && strlen(text[i][j]) == len)
+            if (strcmp(text[i][j],target) == 0)
             {
                 strcpy(text[i][j],replace);
             }
         }
     }
-
 for ( i = 0; i < lines; i++)
 {
     for ( j = 0; j < max_words; j++)
@@ -86,6 +85,5 @@ for ( i = 0; i < lines; i++)
         printf("%s ",text[i][j]);
     }
 }
-
     return 0;
 }
