@@ -110,6 +110,7 @@ int main(){
             break;
         }
     }
+    
     char del[] = "delete";
     for (int i = 0; i < counter; i++)
     {
