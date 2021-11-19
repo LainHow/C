@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+int fun(char *w)
+{
+    char t, *s1, *s2;
+    int n = strlen(w);
+    s1 = w;
+    s2 = w+n-1;
+    while(s1<s2)
+    {
+        t = *s1;
+        *s1 = *s2;
+        *s2 = t;
+        s1++;
+        s2--;
+    }
+}
 struct subject
 {
     char sub_name[20];
@@ -23,7 +38,7 @@ int main(){
     struct stuinfo student[10];
     float num1 = 0,num2 = 0,num3 = -1.0;
     int j = 0,counter=0;
-    char text[10][10][20]={0};
+    char text[10][10][20]={0} , ram[10]={0},ram2[3]={0};
     printf("輸入學生資訊:\n");
     while (1)
     {
@@ -47,7 +62,12 @@ int main(){
             break;
         }
         sscanf(input,"%s\t%s\t%s\t%s\t%s",student[j].name,student[j].ID,student[j].gender,student[j].Major,student[j].phonenum);
-        int id_num = atoi(student[j].ID);
+        strcat(ram, student[j].ID);
+        fun(ram);
+        strncpy(ram2,ram,2);
+        fun(ram2);
+        int id_num = atoi(ram2);
+
         if (id_num % 2 == 1)
         {
             student[j].odd = 1;
