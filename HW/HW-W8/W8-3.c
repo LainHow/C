@@ -67,7 +67,6 @@ int main(){
         strncpy(ram2,ram,2);
         fun(ram2);
         int id_num = atoi(ram2);
-
         if (id_num % 2 == 1)
         {
             student[j].odd = 1;

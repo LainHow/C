@@ -6,9 +6,9 @@
 */
 
 int main() {
-    int num[5];
+    int num[10];
     int i ,j ,m;
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 10; i++) {
         scanf("%d", &num[i]);
     }
 
