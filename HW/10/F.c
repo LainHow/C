@@ -1,4 +1,4 @@
-#include "FUNC.h"
+#include "F.h"
 void sort_num(int *a , int b)
 {
     int num[1000] = {0};

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "FUNC.h"
+#include "F.h"
 
 int main(){
     int a[100],temp;
