@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+
+
+
+        
+
+
+    
+        {
             "name": "gcc.exe - 建置及偵錯使用中的檔案",
             "type": "cppdbg",
             "request": "launch",
