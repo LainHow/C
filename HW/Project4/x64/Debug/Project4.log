@@ -1,0 +1,3 @@
+﻿  demo_tx.c
+D:\download\RS-232-master (3)\RS-232-master\demo_tx.c(34,8): warning C4101: 's': 未參考的區域變數
+  Project4.vcxproj -> D:\F_P\Project4\x64\Debug\Project4.exe

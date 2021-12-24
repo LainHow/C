@@ -1,0 +1,11 @@
+D:\Program_c\HW\HW11-1\11-2\11-2\bin\Debug\11-2.exe.config
+D:\Program_c\HW\HW11-1\11-2\11-2\bin\Debug\11-2.exe
+D:\Program_c\HW\HW11-1\11-2\11-2\bin\Debug\11-2.pdb
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\11-2.csproj.AssemblyReference.cache
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\11-2.csproj.SuggestedBindingRedirects.cache
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\_11_2.Form1.resources
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\_11_2.Properties.Resources.resources
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\11-2.csproj.GenerateResource.cache
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\11-2.csproj.CoreCompileInputs.cache
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\11-2.exe
+D:\Program_c\HW\HW11-1\11-2\11-2\obj\Debug\11-2.pdb
