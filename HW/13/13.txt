@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include <threads.h>
+#include<time.h>
+void *sum(void *arg) {
+	int *input = (int*)arg;
+	int result = input[0] + input[1];
+	thrd_exit(result);
+}
+int main() {
+	thrd_t tid[6];
+	int input[2] = {0};
+	int ret;
+	int num1 = 0,num2 = 0;
+	scanf("%d %d", &num1, &num2);
+	printf("%d\n",num1 + num2);
+	for(int i= 0; i< 6; i++) {
+		input[0] = input[0]+input[1];
+		input[1] = (i%3)+1;
+		int rc= thrd_create( &tid[i], (thrd_start_t)sum, &input);
+		if(rc == thrd_error) {
+			printf("ERORR; thrd_create() call failed\n");
+			return 1;
+		}
+		thrd_join(tid[i], &ret);
+		int result = ret;// 輸出計算結果
+		printf("%d+ %d= %d\n", input[0], input[1], result);
+	}
+	thrd_exit(0);//return 0;
+}
